@@ -10,7 +10,10 @@ const totalVerduleria = document.getElementById("gastoVerduleria");
 const totalSupermercado = document.getElementById("gastoSupermercado");
 const totalCasa = document.getElementById("gastoCasa");
 
-let gastoTotal = 0;
+let gastoTotalCarniceria = 0;
+let gastoTotalVerduleria = 0;
+let gastoTotalSupermercado = 0;
+let gastoTotalCasa = 0;
 
 boton.addEventListener("click", () =>{    
     const nuevoli = document.createElement("li");
@@ -18,24 +21,24 @@ boton.addEventListener("click", () =>{
             if(categoria.value == "carniceria"){
               nuevoli.textContent = monto.value;
                 ulCarniceria.appendChild(nuevoli);
-                gastoTotal += Number(monto.value);
-                totalCarniceria.textContent = "El gasto total es: " + gastoTotal;
+                gastoTotalCarniceria += Number(monto.value);
+                totalCarniceria.textContent = "El gasto total es: " + gastoTotalCarniceria;
 
         }   else if(categoria.value == "verduleria"){
              nuevoli.textContent = monto.value;
                 ulVerduleria.appendChild(nuevoli);
-                gastoTotal += Number(monto.value);
-                totalVerduleria.textContent = "El gasto total es: " + gastoTotal;
+                gastoTotalVerduleria += Number(monto.value);
+                totalVerduleria.textContent = "El gasto total es: " + gastoTotalVerduleria;
         } else if (categoria.value == "supermercado"){
             nuevoli.textContent = monto.value;
             ulSupermercado.appendChild(nuevoli);
-            gastoTotal += Number(monto.value);
-            totalSupermercado.textContent = "El gasto total es: " + gastoTotal;
+            gastoTotalSupermercado += Number(monto.value);
+            totalSupermercado.textContent = "El gasto total es: " + gastoTotalSupermercado;
         } else {
             nuevoli.textContent = monto.value;
             ulCasa.appendChild(nuevoli);
-            gastoTotal += Number(monto.value);
-            totalCasa.textContent = "El gasto total es: " + gastoTotal;
+            gastoTotalCasa += Number(monto.value);
+            totalCasa.textContent = "El gasto total es: " + gastoTotalCasa;
         }
     }
     })
