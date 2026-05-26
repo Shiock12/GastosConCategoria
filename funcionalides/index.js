@@ -16,33 +16,29 @@ let gastoTotalSupermercado = 0;
 let gastoTotalCasa = 0;
 
 boton.addEventListener("click", () =>{    
-    const nuevoli = document.createElement("li");
         if(monto.value > 0){
             if(categoria.value == "carniceria"){
-              nuevoli.textContent = monto.value;
-                ulCarniceria.appendChild(nuevoli);
-                gastoTotalCarniceria += Number(monto.value);
-                totalCarniceria.textContent = "El gasto total es: " + gastoTotalCarniceria;
-
+                gastoTotalCarniceria = gasto (ulCarniceria,totalCarniceria,gastoTotalCarniceria);
         }   else if(categoria.value == "verduleria"){
-             nuevoli.textContent = monto.value;
-                ulVerduleria.appendChild(nuevoli);
-                gastoTotalVerduleria += Number(monto.value);
-                totalVerduleria.textContent = "El gasto total es: " + gastoTotalVerduleria;
+            gastoTotalVerduleria = gasto(ulVerduleria,totalVerduleria,gastoTotalVerduleria);
         } else if (categoria.value == "supermercado"){
-            nuevoli.textContent = monto.value;
-            ulSupermercado.appendChild(nuevoli);
-            gastoTotalSupermercado += Number(monto.value);
-            totalSupermercado.textContent = "El gasto total es: " + gastoTotalSupermercado;
+            gastoTotalSupermercado = gasto(ulSupermercado,totalSupermercado,gastoTotalSupermercado);
         } else {
-            nuevoli.textContent = monto.value;
-            ulCasa.appendChild(nuevoli);
-            gastoTotalCasa += Number(monto.value);
-            totalCasa.textContent = "El gasto total es: " + gastoTotalCasa;
+            gastoTotalCasa = gasto(ulCasa,totalCasa,gastoTotalCasa)
         }
     }
     })
 
+    function gasto(listaUl,totalCategoria,gastoTotalCategoria){
 
-    
+        const nuevoli = document.createElement("li");
+        
+        nuevoli.textContent = monto.value;
+        listaUl.appendChild(nuevoli);
 
+        gastoTotalCategoria += Number(monto.value);
+        totalCategoria.textContent  = "El gasto total es: " + gastoTotalCategoria;
+
+        return gastoTotalCategoria;
+
+    }
