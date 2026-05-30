@@ -37,7 +37,7 @@ boton.addEventListener("click", () =>{
         listaUl.appendChild(nuevoli);
 
         gastoTotalCategoria += Number(monto.value);
-        totalCategoria.textContent  = "El gasto total es: " + gastoTotalCategoria;
+        totalCategoria.textContent  = "El gasto total es: $" + gastoTotalCategoria;
 
         return gastoTotalCategoria;
 
