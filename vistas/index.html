@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos personales</title>
+    <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+
+<body>
+    <main class="app-container">
+        <section class="title-page">
+            <h1>Gastos personales</h1>
+            <p>Registrá tus gastos diarios por categoría</p>
+        </section>
+
+        <section class="form-card">
+            <div class="input-gastos">
+                <label for="monto">Ingresá tu gasto</label>
+                <input 
+                    type="number" 
+                    placeholder="Ej: 2500" 
+                    id="monto"
+                >
+            </div>
+
+            <div class="form-opciones">
+                <label for="categoria">Seleccioná el rubro</label>
+
+                <select id="categoria">
+                    <option value="carniceria">Carnicería</option>
+                    <option value="verduleria">Verdulería</option>
+                    <option value="supermercado">Supermercado</option>
+                    <option value="casa">Gastos casa</option>
+                </select>
+            </div>
+
+            <button id="button">Agregar gasto</button>
+        </section>
+
+        <section class="categorias">
+            <article class="categoria-card">
+                <h2 id="carniceria">Carnicería</h2>
+                <ul id="ul-carniceria"></ul>
+                <p id="gastoCarniceria" class="total-categoria">Total: $0</p>
+            </article>
+
+            <article class="categoria-card">
+                <h2 id="verduleria">Verdulería</h2>
+                <ul id="ul-verduleria"></ul>
+                <p id="gastoVerduleria" class="total-categoria">Total: $0</p>
+            </article>
+
+            <article class="categoria-card">
+                <h2 id="supermercado">Supermercado</h2>
+                <ul id="ul-supermercado"></ul>
+                <p id="gastoSupermercado" class="total-categoria">Total: $0</p>
+            </article>
+
+            <article class="categoria-card">
+                <h2 id="casa">Casa</h2>
+                <ul id="ul-casa"></ul>
+                <p id="gastoCasa" class="total-categoria">Total: $0</p>
+            </article>
+        </section>
+    </main>
+
+    <script src="../funcionalides/index.js"></script>
+</body>
+</html>
